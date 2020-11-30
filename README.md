@@ -11,17 +11,17 @@
 
 ### Acceptance criteria
 
-**Given** a client makes a deposit of 1000 on 10-01-2012  
-**And** a deposit of 2000 on 13-01-2012  
-**And** a withdrawal of 500 on 14-01-2012  
+**Given** a client makes a deposit of 1000 on 10-01-2020   
+**And** a deposit of 2000 on 13-01-2020    
+**And** a withdrawal of 500 on 14-01-2020  
 **When** she prints her bank statement  
 **Then** she would see
 
 ```
 date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+14/01/2020 || || 500.00 || 2500.00
+13/01/2020 || 2000.00 || || 3000.00
+10/01/2020 || 1000.00 || || 1000.00
 ```
 
 ## User Stories
@@ -54,4 +54,4 @@ I want to be able to print a statment
 |-------------|---------------------------------------|------------------------------------------|
 | Account     | - balance = 0<br>- transactions = [ ] | - withdrawal<br>- deposit<br>- statement |
 | Transaction | - date<br>- type<br>- amount          |                                          |
-| Statement   |                                       | print                                    |
+| Statement   |                                       | - print                                    |
