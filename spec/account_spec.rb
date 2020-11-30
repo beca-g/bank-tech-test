@@ -8,4 +8,11 @@ describe Account do
       expect(account.balance).to eq 0
     end
   end
+
+  describe '#deposit' do
+    it 'can deposit into the account' do
+      account.deposit(1000)
+      expect(account.balance).to eq 1000
+    end
+  end
 end
