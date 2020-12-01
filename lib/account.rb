@@ -6,12 +6,12 @@ class Account
   end
 
   def deposit(num)
-    @transactions << Transaction.new(type: 'deposit', amount: num)
+    @transactions << Transaction.new(type: 'credit', amount: num)
     @balance += num
   end
 
   def withdraw(num)
-    @transactions << Transaction.new(type: 'withdraw', amount: num)
+    @transactions << Transaction.new(type: 'debit', amount: num)
     @balance -= num
   end
 end
