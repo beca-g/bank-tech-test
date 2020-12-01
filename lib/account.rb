@@ -16,7 +16,7 @@ class Account
     transaction_log('debit', num)
     @balance -= num
   end
-
+  
   private
 
   def transaction_log(type, amount)

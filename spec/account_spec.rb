@@ -42,4 +42,12 @@ describe Account do
       expect(account.transactions.length).to eq 2
     end
   end
+
+  # describe '#print_statement' do
+  #   it 'prints a statement' do
+  #     account.deposit(1000)
+  #     account.withdraw(100)
+
+  #   end
+  # end
 end
