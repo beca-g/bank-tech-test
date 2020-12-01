@@ -7,7 +7,7 @@ class Statement
   end
 
   def print 
-    puts STATEMENT_HEADINGS + transaction_formula
+    puts STATEMENT_HEADINGS + transaction_formular
   end 
 
   def transaction_formular
