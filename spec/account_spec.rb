@@ -34,7 +34,6 @@ describe Account do
 
     it 'raises and error when there are insufficient funds' do
       expect { account.withdraw(100) }.to raise_error 'Insufficient funds'
-
     end
 
     it 'increases transaction history when a withdrawal is made' do
