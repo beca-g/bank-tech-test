@@ -14,14 +14,14 @@ describe Account do
   end
 
   describe '#deposit' do
-    it 'can deposit into the account' do
+    it 'increases account balance' do
       account.deposit(1000)
       expect(account.balance).to eq 1000
     end
   end
 
   describe '#withdraw' do
-    it 'can withdraw from an account' do
+    it 'decreases account balance' do
       account.deposit(1000)
       account.withdraw(100)
       expect(account.balance).to eq 900
