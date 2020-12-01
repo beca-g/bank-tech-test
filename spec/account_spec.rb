@@ -18,6 +18,11 @@ describe Account do
       account.deposit(1000)
       expect(account.balance).to eq 1000
     end
+
+    it 'increases transaction history when a deposit is made' do
+      account.deposit(1000)
+      expect(account.transactions.length).to eq 1
+    end
   end
 
   describe '#withdraw' do
