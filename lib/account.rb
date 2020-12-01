@@ -6,12 +6,18 @@ class Account
   end
 
   def deposit(num)
-    @transactions << Transaction.new(type: 'credit', amount: num)
+    transaction_log('credit', num)
     @balance += num
   end
 
   def withdraw(num)
-    @transactions << Transaction.new(type: 'debit', amount: num)
+    transaction_log('debit', num)
     @balance -= num
+  end
+
+  private
+
+  def transaction_log(type, amount)
+    @transactions << Transaction.new(type: type, amount: amount)
   end
 end
