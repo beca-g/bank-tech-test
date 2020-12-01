@@ -7,6 +7,10 @@ describe Account do
     it 'accounts are initalized with a balance of zero' do
       expect(account.balance).to eq 0
     end
+
+    it 'accounts are initalized with no transaction history' do
+      expect(account.transactions.length).to eq 0
+    end
   end
 
   describe '#deposit' do
