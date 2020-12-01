@@ -1,14 +1,23 @@
 class Statement
   attr_reader :account
-  STATEMENT_HEADINGS = 'date || credit || debit || balance'
+  STATEMENT_HEADINGS = "date || credit || debit || balance\n"
   def initialize(account)
     @account = account
+    @balance = 0
   end
 
   def print 
-    puts STATEMENT_HEADINGS
-    if @account.transactions.length > 0
-      puts "#{account.transactions[0].date} || #{'%.2f' % @account.transactions[0].amount} || || #{'%.2f' % @account.balance}"
-    end
+    puts STATEMENT_HEADINGS + transaction_formula
   end 
+
+  def transaction_formular
+    @account.transactions.map do | transaction |
+      transaction.type == 'credit' ? transaction_type = "#{'%.2f' % transaction.amount} ||" : transaction_type = "|| #{'%.2f' % transaction.amount}"
+      "#{transaction.date} || #{transaction_type} || #{'%.2f' % update_balance(transaction)}\n"
+    end.reverse.join('')
+  end
+
+  def update_balance(transaction)
+    transaction.type == 'credit' ? @balance += transaction.amount : @balance -= transaction.amount
+  end
 end
