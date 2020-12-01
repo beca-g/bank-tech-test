@@ -1,4 +1,4 @@
-require 'Account'
+require 'account'
 
 describe Account do
   let(:account) { Account.new }
@@ -30,6 +30,11 @@ describe Account do
       account.deposit(1000)
       account.withdraw(100)
       expect(account.balance).to eq 900
+    end
+
+    it 'raises and error when there are insufficient funds' do
+      expect { account.withdraw(100) }.to raise_error 'Insufficient funds'
+
     end
 
     it 'increases transaction history when a withdrawal is made' do

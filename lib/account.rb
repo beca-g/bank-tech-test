@@ -11,6 +11,8 @@ class Account
   end
 
   def withdraw(num)
+    raise 'Insufficient funds' if num > @balance
+
     transaction_log('debit', num)
     @balance -= num
   end
