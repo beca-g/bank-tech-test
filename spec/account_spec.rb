@@ -31,5 +31,11 @@ describe Account do
       account.withdraw(100)
       expect(account.balance).to eq 900
     end
+
+    it 'increases transaction history when a withdrawal is made' do
+      account.deposit(1000)
+      account.withdraw(100)
+      expect(account.transactions.length).to eq 2
+    end
   end
 end
