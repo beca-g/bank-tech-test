@@ -2,6 +2,7 @@ require 'account'
 
 describe Account do
   let(:account) { Account.new }
+  let(:date) { Time.now.strftime('%d/%m/%Y') }
   
   describe '#initalize' do
     it 'accounts are initalized with a balance of zero' do
@@ -40,6 +41,15 @@ describe Account do
       account.deposit(1000)
       account.withdraw(100)
       expect(account.transactions.length).to eq 2
+    end
+  end
+
+  describe '#print_statement' do
+    it 'prints the account statement' do
+      account.deposit(1000)
+      account.withdraw(100)
+      statement_body = "date || credit || debit || balance\n#{date} || || 100.00 || 900.00\n#{date} || 1000.00 || || 1000.00\n"
+      expect { account.print_statement }.to output(statement_body).to_stdout
     end
   end
 end

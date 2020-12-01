@@ -14,7 +14,7 @@ describe Statement do
   end
 
   describe '#print' do
-    let(:account) { double :account, transactions: []}
+    let(:account) { double :account, transactions: [] }
     context 'no transactions have been made' do
       it 'prints statement headings only' do
         expect { statement.print }.to output("date || credit || debit || balance\n").to_stdout

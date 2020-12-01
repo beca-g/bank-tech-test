@@ -11,7 +11,7 @@ class Statement
   end 
 
   def transaction_formular
-    @account.transactions.map do | transaction |
+    @account.transactions.map do |transaction|
       transaction.type == 'credit' ? transaction_type = "#{'%.2f' % transaction.amount} ||" : transaction_type = "|| #{'%.2f' % transaction.amount}"
       "#{transaction.date} || #{transaction_type} || #{'%.2f' % update_balance(transaction)}\n"
     end.reverse.join('')
