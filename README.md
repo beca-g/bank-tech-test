@@ -1,10 +1,22 @@
 # Bank Tech Test
 
+## Getting started
+
+### Setup 
+From the command line run the following:
+```
+git clone git@github.com:beca-g/bank-tech-test.git
+```
+### Install dependencies  
+```
+bundle
+```
+
 ## Specification
 
 ### Requirements
 
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
+* You should be able to interact with your code via a REPL like IRB.  (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
@@ -50,8 +62,40 @@ So I keep track of my transactions
 I want to be able to print a statment  
 ```
 
+```
+As a user  
+So that my bank statement is easy to read  
+I want to see the newest transactions first  
+``` 
+
+## My approach 
+
+I had a test driven and OOP approach to this challenge, firstly creating user stories and then carrying out a plan for the classes and structure.
+
+### Planning
+* I created the user stories based on the requirements and acceptance criteria. I then planned the basic structure of the code, breaking down the user stories into classes and methods by extracting the nouns and verbs from the user stories. For readability and to simplify my code as much as possible I decided to have three classes: Account, Transaction and Statement.
+
+
 | Class       | Attributes                            | Methods                                  |
 |-------------|---------------------------------------|------------------------------------------|
 | Account     | - balance = 0<br>- transactions = [ ] | - withdrawal<br>- deposit<br>- statement |
 | Transaction | - date<br>- type<br>- amount          |                                          |
 | Statement   |                                       | - print                                    |
+
+* I then took pen to papaer and diagrammed and predicted how they would work together.   
+
+![](https://imgur.com/KElJW1V.png)
+
+## Test Coverage
+
+![](https://imgur.com/nWDKvRy.png)
+
+## Running in IRB
+
+![](https://imgur.com/REkUcBo.png)
+
+## Tech
+* ruby 2.7.0
+* rspec
+* simple-cov
+* rubocop
