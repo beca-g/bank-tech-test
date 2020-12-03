@@ -15,9 +15,22 @@ describe Account do
   end
 
   describe '#deposit' do
+    it 'changes the account balance' do
+      expect { account.deposit(1000) }.to change { account.balance }.from(0).to(1000)
+    end
+
+    it 'increases account balance' do
+      account.deposit(1000)
+      expect(account.balance).to eq 1000
+    end
   end
 
   describe '#withdraw' do
+    it 'changes the account balance' do
+      account.deposit(1000)
+      expect { account.withdraw(100) }.to change { account.balance }
+    end
+
     it 'raises and error when there are insufficient funds' do
       expect { account.withdraw(100) }.to raise_error 'Insufficient funds'
     end
