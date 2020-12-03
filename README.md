@@ -12,11 +12,16 @@ git clone git@github.com:beca-g/bank-tech-test.git
 bundle
 ```
 
+### To run tests
+```
+rspec
+```
+
 ## Specification
 
 ### Requirements
 
-* You should be able to interact with your code via a REPL like IRB.  (You don't need to implement a command line interface that takes input from STDIN.)
+* You should be able to interact with your code via a REPL like IRB. (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
@@ -82,7 +87,7 @@ I had a test driven and OOP approach to this challenge, firstly creating user st
 | Transaction | - date<br>- type<br>- amount          |                                          |
 | Statement   |                                       | - print                                    |
 
-* I then took pen to papaer and diagrammed and predicted how they would work together.   
+* I then took pen to paper and diagrammed and predicted how they would work together.   
 
 ![](https://imgur.com/KElJW1V.png)
 
