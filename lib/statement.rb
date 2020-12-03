@@ -1,6 +1,8 @@
 class Statement
   attr_reader :account
+
   STATEMENT_HEADINGS = "date || credit || debit || balance\n"
+  
   def initialize(account)
     @account = account
     @balance = 0
