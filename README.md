@@ -6,8 +6,6 @@
 From the command line run the following:
 ```
 git clone git@github.com:beca-g/bank-tech-test.git
-```
-```
 cd bank-tech-test
 ```
 
