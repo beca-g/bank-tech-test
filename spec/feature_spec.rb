@@ -1,25 +1,12 @@
-require 'account'
-require 'transaction'
-require 'statement'
-
 describe 'features' do
-  let(:account) { Account.new }
-  
-  describe 'transactions' do
-    it 'a deposit increases account balance' do
-      account.deposit(1000)
-      expect(account.balance).to eq 1000
-    end
+  let(:date) { Time.now.strftime('%d/%m/%Y') }
 
-    it 'decreases account balance' do
+  describe 'transactions' do
+    it 'prints a statement correctly' do
+      account = Account.new
       account.deposit(1000)
       account.withdraw(100)
-      expect(account.balance).to eq 900
-    end
-
-    it 'increases transaction history when a transaction is made' do
-      account.deposit(1000)
-      expect(account.transactions.length).to eq 1
+      expect { account.print_statement }.to output("date || credit || debit || balance\n#{date} || || 100.00 || 900.00\n#{date} || 1000.00 || || 1000.00\n").to_stdout
     end
   end
 end
