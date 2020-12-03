@@ -97,7 +97,7 @@ I had a test driven and OOP approach to this challenge, firstly creating user st
 
 ## Test Coverage
 
-![](https://imgur.com/nWDKvRy.png)
+![](https://imgur.com/ATqy96O.png)
 
 ## Running in IRB
 
